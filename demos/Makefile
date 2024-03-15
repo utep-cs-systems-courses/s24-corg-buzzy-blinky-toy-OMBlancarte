@@ -15,8 +15,10 @@ all:
 clean:
 	(cd timerLib && make clean)
 	(cd 1-led && make clean)
-	(cd 2* && make clean)
-	(cd 3* && make clean)
+	(cd 2-led-interrupt && make clean)
+	(cd 2-led-dim && make clean)
+	(cd 3-led-blink && make clean)
+	(cd 3-led-both-blink && make clean)
 	(cd 4* && make clean)
 	(cd 5* && make clean)
 	(cd 6* && make clean)
