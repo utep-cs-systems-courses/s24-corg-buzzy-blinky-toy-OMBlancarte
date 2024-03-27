@@ -13,7 +13,7 @@ all: buzzer.elf
 
 
 #additional rules for files
-buzzer.elf: ${COMMON_OBJECTS} buzzer.o led.o main.o wdInterruptHandler.o ../lib/libTimer.a
+buzzer.elf: ${COMMON_OBJECTS} buzzer.o led.o main.o wdInterruptHandler.o stateMachines.o ../lib/libTimer.a
 	${CC} ${CFLAGS} -o $@ $^
 
 
@@ -24,8 +24,8 @@ clean: $^
 	rm -f *.o *.elf *~
 
 
-buzzer.c: buzzer.h
-main.c: buzzer.h
-led.c: led.h
-
-
+buzzer.o: buzzer.h
+main.o: buzzer.h led.h 
+led.o: led.c led.h
+stateMachines.o: stateMachines.c stateMachines.h led.h
+wdInterruptHandler.o: stateMachines.h
