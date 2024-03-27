@@ -9,23 +9,29 @@ void led_init()
   P1OUT |=LED_RED;        // Red led is on
 }
 
-// turn green led on
-void green_on()
+// Turn green led on or off
+void green_on(int on)
 {
-  P1OUT &= ~LEDS;
-  P1OUT |= LED_GREEN;
+  if(on)
+    P1OUT |= LED_GREEN;
+  else
+    P1OUT &= ~LED_GREEN;
 }
 
-// turn red led on
-void red_on()
+// Turn red led on or off
+void red_on(int on)
 {
-  P1OUT &= ~LEDS;
-  P1OUT|= LED_RED;
+  if(on)
+    P1OUT |= LED_RED;
+  else
+    P1OUT &= ~LED_RED;
 }
 
-// turn both leds on
-void lights_on()
+// turn both leds on or off
+void lights_on(int on)
 {
-  P1OUT &= ~LEDS;
-  P1OUT |= LEDS;
+  if(on)
+    P1OUT |= LEDS;
+  else
+    P1OUT &= ~LEDS;
 }
