@@ -13,7 +13,7 @@ all: buzzer.elf
 
 
 #additional rules for files
-buzzer.elf: ${COMMON_OBJECTS} buzzer.o main.o ../lib/libTimer.a
+buzzer.elf: ${COMMON_OBJECTS} buzzer.o led.o main.o wdInterruptHandler.o ../lib/libTimer.a
 	${CC} ${CFLAGS} -o $@ $^
 
 
@@ -21,11 +21,11 @@ load: buzzer.elf
 	msp430loader.sh  $^
 
 clean: $^
-	rm -f *.o *.elf
+	rm -f *.o *.elf *~
 
 
 buzzer.c: buzzer.h
 main.c: buzzer.h
-
+led.c: led.h
 
 
