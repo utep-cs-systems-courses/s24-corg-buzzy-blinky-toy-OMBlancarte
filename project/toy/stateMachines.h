@@ -3,7 +3,8 @@
 
 // supported states
 enum State{
-  START = 0
+  START = 0,
+  SIREN = 1
 };
 
 
