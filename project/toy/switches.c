@@ -35,4 +35,10 @@ void switch_interrupt_handler()
   if(button1){
     current_state = SIREN;
   }
+  else if(button3){
+    current_state = SONG1;
+  }
+  else if(button4){
+    current_state = SONG2;
+  }
 }

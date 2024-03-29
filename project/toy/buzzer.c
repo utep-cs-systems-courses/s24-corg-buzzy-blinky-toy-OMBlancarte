@@ -43,3 +43,34 @@ void siren_sound()
   buzzer_set_period(current_note);
   current_note += increment;
 }
+
+
+void song_1()
+{
+  int length = 12;
+  static int index1 = 0;
+  int notes[12] = {4000, 4000, 4000, 3100, 3100, 3100, 2700, 2700, 2700, 4600, 4600, 4600};
+  if(index1 == length){
+    index1 = 0;
+  }
+  else{
+    buzzer_set_period(notes[index1]);
+    index1++;
+  }
+}
+
+void song_2()
+{
+  int length = 24;
+  static int index2 = 0;
+  int notes[24] = {1220, 1260, 1330, 1440, 1490, 1330, 1260, 1490, 1520,
+		   1330, 1260, 1520, 1370, 1290, 1220, 1370, 1330, 1260,
+		   1220, 1260, 1260, 1330, 1260, 1220};
+  if(index2 == length){
+    index2 = 0;
+  }
+  else {
+    buzzer_set_period(notes[index2]);
+    index2++;	      
+  }
+}

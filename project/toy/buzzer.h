@@ -4,5 +4,7 @@
 void buzzer_init();
 void buzzer_set_period(short cycles);
 void siren_sound();
+void song_1();
+void song_2();
 
 #endif // included

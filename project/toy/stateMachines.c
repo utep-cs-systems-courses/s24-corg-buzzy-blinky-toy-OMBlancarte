@@ -45,3 +45,18 @@ void siren_state()
     siren_sound();
   }
 }
+
+void song1_state()
+{
+  if(sec_flag){
+    song_1();
+    toggle_green();
+  }
+}
+
+void song2_state()
+{
+  if(sec_flag){
+    song_2();
+  }
+}
