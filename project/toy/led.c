@@ -33,6 +33,11 @@ void toggle_red()
   P1OUT ^= LED_RED;
 }
 
+void toggle_green()
+{
+  P1OUT ^= LED_GREEN;
+}
+
 // turn both leds on or off
 void lights_on(int on)
 {

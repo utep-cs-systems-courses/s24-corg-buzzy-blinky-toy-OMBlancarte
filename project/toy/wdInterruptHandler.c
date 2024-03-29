@@ -8,6 +8,9 @@ void __interrupt_vec(WDT_VECTOR) WDT()     // 250 interrupts/sec
   case START:                // Start state: Blinking red led
     start_state();
     break;
+  case SIREN:
+    siren_state();
+    break;
   }
 
 }

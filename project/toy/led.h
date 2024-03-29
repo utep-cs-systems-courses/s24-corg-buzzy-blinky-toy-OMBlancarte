@@ -11,6 +11,7 @@ void led_init();
 void green_on(int on);
 void red_on(int on);
 void toggle_red();
+void toggle_green();
 void lights_on(int on);
 
 

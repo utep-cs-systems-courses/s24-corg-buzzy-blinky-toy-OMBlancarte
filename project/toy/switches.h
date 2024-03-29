@@ -13,6 +13,7 @@
 
 
 void switch_init();
+static char switch_update_interrupt_sense();
 void switch_interrupt_handler();
 
 

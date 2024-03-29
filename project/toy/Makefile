@@ -9,15 +9,15 @@ CC              = msp430-elf-gcc
 AS              = msp430-elf-as
 
 
-all: buzzer.elf
+all: musicMachine.elf
 
 
 #additional rules for files
-buzzer.elf: ${COMMON_OBJECTS} buzzer.o led.o main.o wdInterruptHandler.o stateMachines.o ../lib/libTimer.a
+musicMachine.elf: ${COMMON_OBJECTS} buzzer.o led.o main.o wdInterruptHandler.o stateMachines.o switches.o p2_interrupt_handler.o ../lib/libTimer.a
 	${CC} ${CFLAGS} -o $@ $^
 
 
-load: buzzer.elf
+load: musicMachine.elf
 	msp430loader.sh  $^
 
 clean: $^
@@ -29,3 +29,4 @@ main.o: buzzer.h led.h
 led.o: led.c led.h
 stateMachines.o: stateMachines.c stateMachines.h led.h
 wdInterruptHandler.o: stateMachines.h
+switches.o: switches.c stateMachines.h

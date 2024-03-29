@@ -14,6 +14,7 @@ extern int sec_count;
 extern int sec_flag;
 
 void start_state();
+void siren_state();
 void update_250th();
 void sec();
 
