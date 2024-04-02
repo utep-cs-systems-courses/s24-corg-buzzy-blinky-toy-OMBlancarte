@@ -74,3 +74,8 @@ void song_2()
     index2++;	      
   }
 }
+
+void song_3()
+{
+  buzzer_set_period(1000);
+}

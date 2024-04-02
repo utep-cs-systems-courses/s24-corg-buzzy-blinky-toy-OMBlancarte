@@ -17,6 +17,9 @@ void __interrupt_vec(WDT_VECTOR) WDT()     // 250 interrupts/sec
   case SONG2:
     song2_state();
     break;
+  case SONG3:
+     song3_state();
+     break;
   }
 
 }

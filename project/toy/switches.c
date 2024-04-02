@@ -35,6 +35,9 @@ void switch_interrupt_handler()
   if(button1){
     current_state = SIREN;
   }
+   else if(button2){             // Button2 possibly broken
+   current_state = SONG3;
+  }
   else if(button3){
     current_state = SONG1;
   }

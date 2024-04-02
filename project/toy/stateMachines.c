@@ -31,8 +31,10 @@ void sec()
 // Start state: toggles red light every sec when the sec_flag is on
 void start_state()
 {
-  if(sec_flag)
+  if(sec_flag){
     toggle_red();
+    sec_flag = 0;
+  }
 }
 
 
@@ -43,6 +45,7 @@ void siren_state()
     toggle_red();
     toggle_green();
     siren_sound();
+    sec_flag = 0;      // reset sec_flag
   }
 }
 
@@ -51,6 +54,7 @@ void song1_state()
   if(sec_flag){
     song_1();
     toggle_green();
+    sec_flag = 0;       // reset sec_flag
   }
 }
 
@@ -58,5 +62,11 @@ void song2_state()
 {
   if(sec_flag){
     song_2();
+    sec_flag = 0;       // reset sec_flag
   }
+}
+
+void song3_state()
+{
+  song_3();
 }
