@@ -1,9 +1,9 @@
 #ifndef led_include
 #define led_include
 
-// Corrected Led P1.0 and P1.6 are switched
-#define LED_RED BIT6
-#define LED_GREEN BIT0
+// New msp430, leds are linked to correct bits
+#define LED_RED BIT0
+#define LED_GREEN BIT6
 #define LEDS (BIT0 | BIT6)
 
 

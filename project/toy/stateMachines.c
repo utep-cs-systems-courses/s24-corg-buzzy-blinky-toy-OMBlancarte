@@ -14,7 +14,7 @@ int sec_flag = 0;
 void update_250th()
 {
   update_sec++;
-  if(update_sec == 250) {
+  if(update_sec == 25) {
     update_sec = 0;
     sec();
   }
@@ -62,11 +62,15 @@ void song2_state()
 {
   if(sec_flag){
     song_2();
+    toggle_green();
     sec_flag = 0;       // reset sec_flag
   }
 }
 
 void song3_state()
 {
-  song_3();
+  if(sec_flag){
+    song_3();
+    sec_flag = 0;       // rest sec_flag
+  }
 }

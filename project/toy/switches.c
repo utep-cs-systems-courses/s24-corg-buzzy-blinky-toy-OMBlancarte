@@ -1,6 +1,7 @@
 #include <msp430.h>
 #include "switches.h"
 #include "stateMachines.h"
+#include "led.h"
 
 // Initialize switches
 void switch_init()
@@ -31,12 +32,15 @@ void switch_interrupt_handler()
   char button2 = (p2val & SW2) ? 0 : 1;
   char button3 = (p2val & SW3) ? 0 : 1;
   char button4 = (p2val & SW4) ? 0 : 1;
-
+  
+  lights_on(0);
+  
   if(button1){
+    red_on(1);
     current_state = SIREN;
   }
-   else if(button2){             // Button2 possibly broken
-   current_state = SONG3;
+  else if(button2){
+    current_state = SONG3;
   }
   else if(button3){
     current_state = SONG1;
