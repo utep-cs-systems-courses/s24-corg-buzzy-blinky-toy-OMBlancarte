@@ -65,12 +65,15 @@ void song2_state()
     toggle_green();
     sec_flag = 0;       // reset sec_flag
   }
+  toggle_red();
 }
 
 void song3_state()
 {
   if(sec_flag){
     song_3();
+    toggle_red();
+    toggle_green();
     sec_flag = 0;       // rest sec_flag
   }
 }
